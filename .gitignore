@@ -1,0 +1,18 @@
+# Log files
+logs/*
+*.log
+
+# Temporary files
+tmp/*
+*.tmp
+
+# Token files
+.config/token
+.config/token_expiry
+
+# Backup and swap files
+*~
+*.swp
+
+# OS generated files
+.DS_Store

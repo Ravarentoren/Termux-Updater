@@ -1,0 +1,21 @@
+name: Termux-Updater
+version: 0.1.0
+authors:
+  - Ravarentoren
+  - ChatGPT (GPT-5-mini)
+license: MIT
+description: |
+  Multiplatform Termux-Updater skeleton with token validation, log handling, 
+  and GitHub issue preparation. Ready for incremental development.
+folders:
+  - bin/
+  - config/
+  - logs/
+  - tmp/
+  - scripts/
+  - docs/
+dependencies:
+  - bash
+  - curl
+  - jq
+  - git
