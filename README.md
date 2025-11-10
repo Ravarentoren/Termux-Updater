@@ -13,7 +13,7 @@
 ![CI](https://github.com/Ravarentoren/Termux-Updater/actions/workflows/ci.yml/badge.svg)
 
 ## Latest Commit
-[View on GitHub](https://github.com/Ravarentoren/Termux-Updater/commit/dc1663c3b3e1b5db609fbd6809428a233637bdf1)
+[View on GitHub](https://github.com/Ravarentoren/Termux-Updater/commit/97008e4bbd5cef8053d79c67021661e73c16a1e8)
 
 ## Latest Release
 [Release page](https://github.com/Ravarentoren/Termux-Updater/releases)
