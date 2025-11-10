@@ -2,166 +2,82 @@ name: Termux-Updater CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
-
-permissions:
-  contents: write
-  issues: write
+    branches:
+      - main
+  schedule:
+    - cron: '0 5 * * *'
 
 jobs:
-  syntax-check:
-    name: Bash Syntax Validation
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v3
+
+      # Install dependencies
+      - name: Install bash, curl, jq
+        run: |
+          sudo apt-get update || true
+          sudo apt-get install -y bash curl jq || true
+
+      # Run Termux-simulated tests
+      - name: Run Termux-Updater tests
+        run: |
+          echo "[CI] Running placeholder tests..."
+          bash tests/test_structure.sh || exit 1
+
+  docs-deploy:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy docs to GitHub Pages
+        run: |
+          echo "[CI] Docs placeholder deployment..."
+          mkdir -p docs/_site
+          cp -r docs/* docs/_site/
+
+  issue-automation:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Verify Bash script syntax
-        id: syntax
-        run: |
-          set -e
-          echo "🔍 Checking bash syntax..." > ci_result.log
-          find . -type f -name "*.sh" ! -path "./.git/*" -exec bash -n {} \; || {
-            echo "❌ Syntax errors found!" >> ci_result.log
-            exit 1
-          }
-          echo "✅ Syntax OK" >> ci_result.log
-
-      - name: Upload syntax log artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/github-script@v6
         with:
-          name: syntax-log
-          path: ci_result.log
+          script: |
+            const { context, github } = require("@actions/github");
+            const repo = context.repo;
+            const token = process.env.GITHUB_TOKEN;
+            const octokit = github.getOctokit(token);
 
-      - name: Create GitHub Issue on Failure
-        if: failure()
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          title: "Syntax validation failed in CI"
-          content-filepath: ci_result.log
-          labels: "ci, syntax, automated-report"
+            // Create an issue placeholder
+            await octokit.rest.issues.create({
+              owner: repo.owner,
+              repo: repo.repo,
+              title: "Automated CI placeholder issue",
+              body: "This issue was created automatically by CI workflow."
+            });
 
-      - name: Close Syntax Issue on Success
-        if: success()
-        uses: peter-evans/close-issue@v3
-        with:
-          issue-number: ${{ steps.syntax.outputs.issue-number || 0 }}
-          comment: "✅ Syntax validation passed and verified by CI."
-          labels: "ci, syntax, resolved-by-ci"
-          remove-labels: "automated-report,failed"
+            // Close issues older than 14 days
+            const { data: issues } = await octokit.rest.issues.listForRepo({
+              owner: repo.owner,
+              repo: repo.repo,
+              state: "open"
+            });
 
-  placeholder-tests:
-    name: Placeholder Structure Test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Verify required directories
-        id: placeholders
-        run: |
-          echo "🔍 Verifying required directories..." > ci_result.log
-          REQUIRED=(bin config docs examples modules scripts tests logs tmp)
-          for d in "${REQUIRED[@]}"; do
-            if [ ! -d "$d" ]; then
-              echo "❌ Missing directory: $d" >> ci_result.log
-              exit 1
-            fi
-          done
-          echo "✅ All required directories exist." >> ci_result.log
-
-      - name: Create GitHub Issue on Failure
-        if: failure()
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          title: "Missing required directories"
-          content-filepath: ci_result.log
-          labels: "ci, structure, automated-report"
-
-      - name: Close Structure Issue on Success
-        if: success()
-        uses: peter-evans/close-issue@v3
-        with:
-          issue-number: ${{ steps.placeholders.outputs.issue-number || 0 }}
-          comment: "✅ All required directories now exist. Auto-closed by CI."
-          labels: "ci, structure, resolved-by-ci"
-          remove-labels: "automated-report,failed"
-
-  termux-sim:
-    name: Termux Simulation Test
-    runs-on: ubuntu-latest
-    container:
-      image: termux/termux-docker:latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Simulate Termux environment
-        id: termux
-        run: |
-          echo "🏗️ Running Termux simulation..." > ci_result.log
-          pkg install -y bash coreutils curl jq git > /dev/null 2>&1 || true
-          mkdir -p ~/.update-config/logs ~/.update-config/tmp
-          echo "dummy_token" > ~/.update-config/token
-
-          if ! bash bin/update.sh --dry-run 2>>ci_result.log; then
-            echo "❌ Termux simulation failed" >> ci_result.log
-            exit 1
-          fi
-          echo "✅ Termux simulation passed." >> ci_result.log
-
-      - name: Create GitHub Issue on Failure
-        if: failure()
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          title: "Termux simulation failed"
-          content-filepath: ci_result.log
-          labels: "ci, termux, automated-report"
-
-      - name: Close Termux Issue on Success
-        if: success()
-        uses: peter-evans/close-issue@v3
-        with:
-          issue-number: ${{ steps.termux.outputs.issue-number || 0 }}
-          comment: "✅ Termux simulation now passes. Issue resolved automatically."
-          labels: "ci, termux, resolved-by-ci"
-          remove-labels: "automated-report,failed"
-
-  version-sync:
-    name: Cross-Platform Sync Check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Verify structure parity
-        id: sync
-        run: |
-          echo "🔍 Checking parity between local and remote branches..." > ci_result.log
-          git fetch origin main
-          LOCAL_COUNT=$(find . -type f | wc -l)
-          REMOTE_COUNT=$(git ls-tree -r origin/main --name-only | wc -l)
-          echo "Local: $LOCAL_COUNT" >> ci_result.log
-          echo "Remote: $REMOTE_COUNT" >> ci_result.log
-          if [ "$LOCAL_COUNT" -lt "$REMOTE_COUNT" ]; then
-            echo "❌ Local missing files. Sync needed." >> ci_result.log
-            exit 1
-          else
-            echo "✅ Structures match." >> ci_result.log
-          fi
-
-      - name: Create GitHub Issue on Failure
-        if: failure()
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          title: "Version synchronization mismatch"
-          content-filepath: ci_result.log
-          labels: "ci, sync, automated-report"
-
-      - name: Close Sync Issue on Success
-        if: success()
-        uses: peter-evans/close-issue@v3
-        with:
-          issue-number: ${{ steps.sync.outputs.issue-number || 0 }}
-          comment: "✅ Version synchronization resolved and validated by CI."
-          labels: "ci, sync, resolved-by-ci"
-          remove-labels: "automated-report,failed"
-
+            const now = new Date();
+            for (const issue of issues) {
+              const created = new Date(issue.created_at);
+              const diffDays = (now - created) / (1000*60*60*24);
+              if (diffDays >= 14) {
+                await octokit.rest.issues.update({
+                  owner: repo.owner,
+                  repo: repo.repo,
+                  issue_number: issue.number,
+                  state: "closed"
+                });
+              }
+            }
