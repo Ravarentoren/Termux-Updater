@@ -1,41 +1,37 @@
 # Termux-Updater
 
-Multiplatform updater skeleton for Termux and Linux systems.
+[![CI Status](https://github.com/Ravarentoren/Termux-Updater/actions/workflows/ci.yml/badge.svg)](https://github.com/Ravarentoren/Termux-Updater/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Coverage Status](https://img.shields.io/badge/Coverage-0%25-lightgrey)](#)  # placeholder
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](Manifest.yaml)
 
-## Current Repository Status
+## Description
+Multiplatform Termux-Updater skeleton with CI, issue automation, and placeholder modules.
 
-- Last commit: dd25b83 - Update README.md with dynamic links and sections Authors: Ravarentoren, ChatGPT (GPT-5-mini) License: Manifest + MIT (Ravarentoren)
-- Last open issue: [Missing required directories](https://github.com/Ravarentoren/Termux-Updater/issues/1)
+## Current Repo Status
+- **Last Commit:** [a75a068](https://github.com/Ravarentoren/Termux-Updater/commit/a75a068) - CI: auto-update README.md workflow added
+- **Last Issue:** [Missing required directories](https://github.com/Ravarentoren/Termux-Updater/issues/1)
 
-## Repository Structure
+## Modules & Docs
+- modules/README.md
+- docs/CONTRIBUTING.md
+- docs/ROADMAP.md
+- examples/README.md
 
-- **bin/** – main updater scripts  
-- **config/** – configuration placeholders  
-- **scripts/** – helper scripts  
-- **docs/** – documentation placeholders  
-- **examples/** – usage examples  
-- **modules/** – future extensions/modules  
-- **tests/** – test scripts and validation  
-- **tmp/** – temporary files  
+## Tests
+- tests/test_structure.sh
 
 ## License
-
 Manifest + MIT
 
-## Authors
+## CI Notes
+- Auto-update README.md via GitHub Actions
+- Logs & temp cleanup included
 
-- Ravarentoren  
-- ChatGPT (GPT-5-mini)
-
-## Continuous Integration
-
-- GitHub Actions CI with Termux simulation, cross-platform sync, issue automation, cleanup
-
-## Možné další rozšíření
-
-- Automatické generování release tarballů / zipů při releasu  
-- Automatická kontrola závislostí a verze Termux balíčků  
-- Integrace s notifikačními kanály (Discord, Slack) při úspěšném CI  
-- Testy kompatibility s různými verzemi Termux a Android  
-- Přidání badge pro coverage a další metriky kvality kódu  
-- Automatická synchronizace mezi různými repozitáři (forky, upstream)
+## Possible Future Extensions
+- Automatic release tarball/zip generation
+- Dependency and Termux package version checks
+- Notifications via Discord/Slack on CI success
+- Compatibility tests with various Termux & Android versions
+- Coverage and code quality badges
+- Automatic synchronization across forks/upstream
