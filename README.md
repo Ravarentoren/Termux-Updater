@@ -1,37 +1,31 @@
 # Termux-Updater
 
-Automated README update by CI.
+[![CI Status](https://github.com/Ravarentoren/Termux-Updater/actions/workflows/ci.yml/badge.svg)](https://github.com/Ravarentoren/Termux-Updater/actions)
+[![Release](https://img.shields.io/github/v/release/Ravarentoren/Termux-Updater)](https://github.com/Ravarentoren/Termux-Updater/releases)
 
-## Repository Status
+## Description
+Multiplatform skeleton for Termux-Updater, ready for documentation, scripts, modules, tests, and CI automation.
 
-- Latest commit: [dynamic]
-- Latest open issue: [dynamic]
-
-## Structure
-
+## Repository Structure
 - bin/
 - config/
-- scripts/
 - docs/
 - examples/
 - modules/
+- scripts/
 - tests/
 - tmp/
 
 ## License
-
 Manifest + MIT
 
-## Contributors
-
+## Authors
 - Ravarentoren
 - ChatGPT (GPT-5-mini)
 
-## CI Status
-
-![CI](https://github.com/Ravarentoren/Termux-Updater/actions/workflows/update_readme.yml/badge.svg)
-![Coverage](https://img.shields.io/badge/coverage-0%25-red)
-
-## Notes
-
-This README is automatically updated by GitHub Actions.
+## CI / Automation
+- Automatic README.md update
+- Termux simulation
+- GitHub issue / commit linkage
+- Release artifact creation
+- Notifications on success
