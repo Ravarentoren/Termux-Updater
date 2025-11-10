@@ -1,54 +1,41 @@
 # Termux-Updater
 
-**Authors:** Ravarentoren, ChatGPT (GPT-5-mini)  
-**License:** Manifest + MIT
+Multiplatform updater skeleton for Termux and Linux systems.
 
----
+## Current Repository Status
 
-## Latest Commit
-[View latest commit](https://github.com/Ravarentoren/Termux-Updater/commit/ba6bb03)
+- Last commit: dd25b83 - Update README.md with dynamic links and sections Authors: Ravarentoren, ChatGPT (GPT-5-mini) License: Manifest + MIT (Ravarentoren)
+- Last open issue: [Missing required directories](https://github.com/Ravarentoren/Termux-Updater/issues/1)
 
-## Last Resolved Issue
-[View last resolved issue](https://github.com/Ravarentoren/Termux-Updater/issues)
+## Repository Structure
 
----
+- **bin/** – main updater scripts  
+- **config/** – configuration placeholders  
+- **scripts/** – helper scripts  
+- **docs/** – documentation placeholders  
+- **examples/** – usage examples  
+- **modules/** – future extensions/modules  
+- **tests/** – test scripts and validation  
+- **tmp/** – temporary files  
 
-## Usage
+## License
 
-Run the main updater script:
+Manifest + MIT
 
-```bash
-bash bin/update.sh
-```
+## Authors
 
-Modules are located in `modules/`. Examples are in `examples/`.  
+- Ravarentoren  
+- ChatGPT (GPT-5-mini)
 
----
+## Continuous Integration
 
-## Continuous Integration (CI)
+- GitHub Actions CI with Termux simulation, cross-platform sync, issue automation, cleanup
 
-GitHub Actions runs automated tests, checks cross-platform compatibility, and synchronizes updates:
+## Možné další rozšíření
 
-- Workflow: [.github/workflows/ci.yml](.github/workflows/ci.yml)
-- View workflow runs: [Actions](https://github.com/Ravarentoren/Termux-Updater/actions)
-- Automated issue labeling and cleanup included.
-
----
-
-## Contributing
-
-See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines on adding modules, tests, and examples.  
-
-Collaborate with Termux and Linux community developers to enhance multiplatform support.
-
----
-
-## Roadmap
-
-Planned features and roadmap: [ROADMAP.md](docs/ROADMAP.md)
-
----
-
-## Logs & History
-
-Updater logs are in `logs/`. Old logs are automatically cleaned after 30 days.
+- Automatické generování release tarballů / zipů při releasu  
+- Automatická kontrola závislostí a verze Termux balíčků  
+- Integrace s notifikačními kanály (Discord, Slack) při úspěšném CI  
+- Testy kompatibility s různými verzemi Termux a Android  
+- Přidání badge pro coverage a další metriky kvality kódu  
+- Automatická synchronizace mezi různými repozitáři (forky, upstream)
