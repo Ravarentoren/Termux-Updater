@@ -1,21 +1,26 @@
 # Termux-Updater
 
-Authors: Ravarentoren, ChatGPT (GPT-5-mini)  
-License: Manifest + MIT  
+**Status:** Active
 
-## Repository Status
-- Branch: main
-- Last commit: $(git log -1 --pretty=format:"%h - %an - %s")
-- Workflow: [.github/workflows/ci.yml](.github/workflows/ci.yml)
+## Structure
+- Directories: bin, config, scripts, docs, modules, examples, tests, tmp
+- CI/CD: GitHub Actions with Termux simulation, issue automation, release workflow
+- License: MIT
+- Manifest: Manifest.yaml
+- CHANGELOG: CHANGELOG.md
 
-## Badges
+## CI Status
 ![CI](https://github.com/Ravarentoren/Termux-Updater/actions/workflows/ci.yml/badge.svg)
-![Release](https://img.shields.io/github/v/release/Ravarentoren/Termux-Updater)
 
-## Description
-Multiplatform Termux-Updater structure ready for filling. Includes CI, placeholder docs, modules, examples, tests, release automation, and issue handling.
+## Latest Commit
+[View on GitHub](https://github.com/Ravarentoren/Termux-Updater/commit/dc1663c3b3e1b5db609fbd6809428a233637bdf1)
 
-## Links
-- [GitHub Repository](https://github.com/Ravarentoren/Termux-Updater)
-- [Issues](https://github.com/Ravarentoren/Termux-Updater/issues)
+## Latest Release
+[Release page](https://github.com/Ravarentoren/Termux-Updater/releases)
 
+## Contributing
+See [CONTRIBUTING.md](docs/CONTRIBUTING.md) and [ROADMAP.md](docs/ROADMAP.md)
+
+## Additional Notes
+- CHANGELOG updates (manual for now)
+- Release archives generated in /data/data/com.termux/files/home/Termux-Updater/release_tmp/
