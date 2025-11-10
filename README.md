@@ -1,27 +1,54 @@
 # Termux-Updater
 
-**Multiplatformní nástroj pro aktualizaci a správu Termux prostředí**
+**Authors:** Ravarentoren, ChatGPT (GPT-5-mini)  
+**License:** Manifest + MIT
 
 ---
 
-## Autoři
-- **Ravarentoren**  
-- **ChatGPT (GPT-5-mini)**
+## Latest Commit
+[View latest commit](https://github.com/Ravarentoren/Termux-Updater/commit/ba6bb03)
 
-## Licence
-- Manifest + MIT
-
-## Stav projektu
-Tento repozitář obsahuje skeleton projektu s připravenou strukturou složek, GitHub Actions CI workflow, placeholdery pro dokumentaci, moduly, příklady a testy.  
-
-## Spolupráce
-- Prohlédněte si [CONTRIBUTING.md](docs/CONTRIBUTING.md)  
-- Nahlaste problémy na [GitHub Issues](https://github.com/Ravarentoren/Termux-Updater/issues)  
-- Roadmapa je k dispozici v [ROADMAP.md](docs/ROADMAP.md)  
-
-## GitHub Actions
-Workflowy CI jsou nastavené a spouštějí multiplatformní testy, kontrolu struktury a správu issue.
+## Last Resolved Issue
+[View last resolved issue](https://github.com/Ravarentoren/Termux-Updater/issues)
 
 ---
 
-*Poznámka:* README bude postupně doplněno o konkrétní instrukce pro instalaci, spuštění, moduly a příklady.
+## Usage
+
+Run the main updater script:
+
+```bash
+bash bin/update.sh
+```
+
+Modules are located in `modules/`. Examples are in `examples/`.  
+
+---
+
+## Continuous Integration (CI)
+
+GitHub Actions runs automated tests, checks cross-platform compatibility, and synchronizes updates:
+
+- Workflow: [.github/workflows/ci.yml](.github/workflows/ci.yml)
+- View workflow runs: [Actions](https://github.com/Ravarentoren/Termux-Updater/actions)
+- Automated issue labeling and cleanup included.
+
+---
+
+## Contributing
+
+See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines on adding modules, tests, and examples.  
+
+Collaborate with Termux and Linux community developers to enhance multiplatform support.
+
+---
+
+## Roadmap
+
+Planned features and roadmap: [ROADMAP.md](docs/ROADMAP.md)
+
+---
+
+## Logs & History
+
+Updater logs are in `logs/`. Old logs are automatically cleaned after 30 days.
