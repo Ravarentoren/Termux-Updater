@@ -1,83 +1,27 @@
-name: Termux-Updater CI
+name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
-  schedule:
-    - cron: '0 5 * * *'
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  build-and-test:
+  build-test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        platform: [ubuntu-latest, macos-latest, windows-latest]
     steps:
       - uses: actions/checkout@v3
+      - name: Setup Termux Environment
+        run: echo "Simulating Termux environment..."
+      - name: Run placeholder tests
+        run: bash tests/test_structure.sh
 
-      # Install dependencies
-      - name: Install bash, curl, jq
-        run: |
-          sudo apt-get update || true
-          sudo apt-get install -y bash curl jq || true
-
-      # Run Termux-simulated tests
-      - name: Run Termux-Updater tests
-        run: |
-          echo "[CI] Running placeholder tests..."
-          bash tests/test_structure.sh || exit 1
-
-  docs-deploy:
+  update-readme:
     runs-on: ubuntu-latest
-    needs: build-and-test
     steps:
       - uses: actions/checkout@v3
-      - name: Deploy docs to GitHub Pages
+      - name: Update README.md dynamically
         run: |
-          echo "[CI] Docs placeholder deployment..."
-          mkdir -p docs/_site
-          cp -r docs/* docs/_site/
-
-  issue-automation:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/github-script@v6
-        with:
-          script: |
-            const { context, github } = require("@actions/github");
-            const repo = context.repo;
-            const token = process.env.GITHUB_TOKEN;
-            const octokit = github.getOctokit(token);
-
-            // Create an issue placeholder
-            await octokit.rest.issues.create({
-              owner: repo.owner,
-              repo: repo.repo,
-              title: "Automated CI placeholder issue",
-              body: "This issue was created automatically by CI workflow."
-            });
-
-            // Close issues older than 14 days
-            const { data: issues } = await octokit.rest.issues.listForRepo({
-              owner: repo.owner,
-              repo: repo.repo,
-              state: "open"
-            });
-
-            const now = new Date();
-            for (const issue of issues) {
-              const created = new Date(issue.created_at);
-              const diffDays = (now - created) / (1000*60*60*24);
-              if (diffDays >= 14) {
-                await octokit.rest.issues.update({
-                  owner: repo.owner,
-                  repo: repo.repo,
-                  issue_number: issue.number,
-                  state: "closed"
-                });
-              }
-            }
+          echo "Updating README.md..."
+          # zde bude volání final_readme.sh
