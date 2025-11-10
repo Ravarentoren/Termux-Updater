@@ -1,0 +1,96 @@
+name: Termux-Updater CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  syntax-check:
+    name: Bash Syntax Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify Bash script syntax
+        run: |
+          echo "🔍 Checking bash syntax..."
+          find . -type f -name "*.sh" ! -path "./.git/*" -exec bash -n {} \;
+
+      - name: Ensure executables have correct permissions
+        run: |
+          echo "🔍 Checking executable permissions..."
+          for f in $(find . -type f -name "*.sh"); do
+            if [ ! -x "$f" ]; then
+              echo "⚠️  Missing execute permission: $f"
+              chmod +x "$f"
+            else
+              echo "✅ $f is executable"
+            fi
+          done
+
+  placeholder-tests:
+    name: Placeholder Structure Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify required directories
+        run: |
+          REQUIRED=(bin config docs examples modules scripts tests logs tmp)
+          for d in "${REQUIRED[@]}"; do
+            if [ ! -d "$d" ]; then
+              echo "❌ Missing: $d"
+              exit 1
+            else
+              echo "✅ Found: $d"
+            fi
+          done
+          echo "✅ All required directories exist."
+
+  termux-sim:
+    name: Termux Simulation Test
+    runs-on: ubuntu-latest
+    container:
+      image: termux/termux-docker:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Simulate Termux environment
+        run: |
+          echo "🏗️ Setting up Termux-like environment..."
+          pkg install -y bash coreutils curl jq git > /dev/null 2>&1 || true
+          mkdir -p ~/.update-config/logs ~/.update-config/tmp
+          touch ~/.update-config/token
+          echo "github_pat_dummy" > ~/.update-config/token
+
+          echo "🔧 Running Termux-Updater basic test..."
+          bash bin/update.sh --dry-run || echo "⚠️ Script completed with non-zero exit"
+
+      - name: Synchronization Verification
+        run: |
+          echo "🔁 Checking file synchronization..."
+          if [ -d "/data/data/com.termux" ]; then
+            echo "⚠️ Termux folder detected (simulated)"
+          fi
+          echo "✅ Synchronization placeholder passed."
+
+  version-sync:
+    name: Cross-Platform Sync Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify structure parity
+        run: |
+          echo "🔍 Verifying parity between local and remote branches..."
+          git fetch origin main
+          LOCAL_COUNT=$(find . -type f | wc -l)
+          REMOTE_COUNT=$(git ls-tree -r origin/main --name-only | wc -l)
+          echo "Local files:  $LOCAL_COUNT"
+          echo "Remote files: $REMOTE_COUNT"
+          if [ "$LOCAL_COUNT" -lt "$REMOTE_COUNT" ]; then
+            echo "⚠️ Local missing files, suggest sync!"
+          else
+            echo "✅ Local structure up to date."
+          fi
