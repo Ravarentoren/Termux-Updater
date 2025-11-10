@@ -1,0 +1,24 @@
+name: Auto Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Termux simulation (optional)
+        run: echo "Termux simulation step placeholder"
+
+      - name: Update README + badges
+        run: bash ./update_readme_release.sh
+
+      - name: Create release archive
+        run: |
+          mkdir -p release_tmp
+          zip -r release_tmp/Termux-Updater.zip ./*
