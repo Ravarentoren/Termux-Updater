@@ -6,48 +6,86 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write
+  issues: write
+
 jobs:
   syntax-check:
     name: Bash Syntax Validation
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Verify Bash script syntax
+        id: syntax
         run: |
-          echo "🔍 Checking bash syntax..."
-          find . -type f -name "*.sh" ! -path "./.git/*" -exec bash -n {} \;
+          set -e
+          echo "🔍 Checking bash syntax..." > ci_result.log
+          find . -type f -name "*.sh" ! -path "./.git/*" -exec bash -n {} \; || {
+            echo "❌ Syntax errors found!" >> ci_result.log
+            exit 1
+          }
+          echo "✅ Syntax OK" >> ci_result.log
 
-      - name: Ensure executables have correct permissions
-        run: |
-          echo "🔍 Checking executable permissions..."
-          for f in $(find . -type f -name "*.sh"); do
-            if [ ! -x "$f" ]; then
-              echo "⚠️  Missing execute permission: $f"
-              chmod +x "$f"
-            else
-              echo "✅ $f is executable"
-            fi
-          done
+      - name: Upload syntax log artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: syntax-log
+          path: ci_result.log
+
+      - name: Create GitHub Issue on Failure
+        if: failure()
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Syntax validation failed in CI"
+          content-filepath: ci_result.log
+          labels: "ci, syntax, automated-report"
+
+      - name: Close Syntax Issue on Success
+        if: success()
+        uses: peter-evans/close-issue@v3
+        with:
+          issue-number: ${{ steps.syntax.outputs.issue-number || 0 }}
+          comment: "✅ Syntax validation passed and verified by CI."
+          labels: "ci, syntax, resolved-by-ci"
+          remove-labels: "automated-report,failed"
 
   placeholder-tests:
     name: Placeholder Structure Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Verify required directories
+        id: placeholders
         run: |
+          echo "🔍 Verifying required directories..." > ci_result.log
           REQUIRED=(bin config docs examples modules scripts tests logs tmp)
           for d in "${REQUIRED[@]}"; do
             if [ ! -d "$d" ]; then
-              echo "❌ Missing: $d"
+              echo "❌ Missing directory: $d" >> ci_result.log
               exit 1
-            else
-              echo "✅ Found: $d"
             fi
           done
-          echo "✅ All required directories exist."
+          echo "✅ All required directories exist." >> ci_result.log
+
+      - name: Create GitHub Issue on Failure
+        if: failure()
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Missing required directories"
+          content-filepath: ci_result.log
+          labels: "ci, structure, automated-report"
+
+      - name: Close Structure Issue on Success
+        if: success()
+        uses: peter-evans/close-issue@v3
+        with:
+          issue-number: ${{ steps.placeholders.outputs.issue-number || 0 }}
+          comment: "✅ All required directories now exist. Auto-closed by CI."
+          labels: "ci, structure, resolved-by-ci"
+          remove-labels: "automated-report,failed"
 
   termux-sim:
     name: Termux Simulation Test
@@ -58,39 +96,72 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Simulate Termux environment
+        id: termux
         run: |
-          echo "🏗️ Setting up Termux-like environment..."
+          echo "🏗️ Running Termux simulation..." > ci_result.log
           pkg install -y bash coreutils curl jq git > /dev/null 2>&1 || true
           mkdir -p ~/.update-config/logs ~/.update-config/tmp
-          touch ~/.update-config/token
-          echo "github_pat_dummy" > ~/.update-config/token
+          echo "dummy_token" > ~/.update-config/token
 
-          echo "🔧 Running Termux-Updater basic test..."
-          bash bin/update.sh --dry-run || echo "⚠️ Script completed with non-zero exit"
-
-      - name: Synchronization Verification
-        run: |
-          echo "🔁 Checking file synchronization..."
-          if [ -d "/data/data/com.termux" ]; then
-            echo "⚠️ Termux folder detected (simulated)"
+          if ! bash bin/update.sh --dry-run 2>>ci_result.log; then
+            echo "❌ Termux simulation failed" >> ci_result.log
+            exit 1
           fi
-          echo "✅ Synchronization placeholder passed."
+          echo "✅ Termux simulation passed." >> ci_result.log
+
+      - name: Create GitHub Issue on Failure
+        if: failure()
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Termux simulation failed"
+          content-filepath: ci_result.log
+          labels: "ci, termux, automated-report"
+
+      - name: Close Termux Issue on Success
+        if: success()
+        uses: peter-evans/close-issue@v3
+        with:
+          issue-number: ${{ steps.termux.outputs.issue-number || 0 }}
+          comment: "✅ Termux simulation now passes. Issue resolved automatically."
+          labels: "ci, termux, resolved-by-ci"
+          remove-labels: "automated-report,failed"
 
   version-sync:
     name: Cross-Platform Sync Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Verify structure parity
+        id: sync
         run: |
-          echo "🔍 Verifying parity between local and remote branches..."
+          echo "🔍 Checking parity between local and remote branches..." > ci_result.log
           git fetch origin main
           LOCAL_COUNT=$(find . -type f | wc -l)
           REMOTE_COUNT=$(git ls-tree -r origin/main --name-only | wc -l)
-          echo "Local files:  $LOCAL_COUNT"
-          echo "Remote files: $REMOTE_COUNT"
+          echo "Local: $LOCAL_COUNT" >> ci_result.log
+          echo "Remote: $REMOTE_COUNT" >> ci_result.log
           if [ "$LOCAL_COUNT" -lt "$REMOTE_COUNT" ]; then
-            echo "⚠️ Local missing files, suggest sync!"
+            echo "❌ Local missing files. Sync needed." >> ci_result.log
+            exit 1
           else
-            echo "✅ Local structure up to date."
+            echo "✅ Structures match." >> ci_result.log
           fi
+
+      - name: Create GitHub Issue on Failure
+        if: failure()
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Version synchronization mismatch"
+          content-filepath: ci_result.log
+          labels: "ci, sync, automated-report"
+
+      - name: Close Sync Issue on Success
+        if: success()
+        uses: peter-evans/close-issue@v3
+        with:
+          issue-number: ${{ steps.sync.outputs.issue-number || 0 }}
+          comment: "✅ Version synchronization resolved and validated by CI."
+          labels: "ci, sync, resolved-by-ci"
+          remove-labels: "automated-report,failed"
+
