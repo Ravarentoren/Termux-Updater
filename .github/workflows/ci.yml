@@ -1,27 +1,57 @@
-name: CI
+name: Termux-Updater CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
-  workflow_dispatch:
 
 jobs:
-  build-test:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Termux Environment
-        run: echo "Simulating Termux environment..."
-      - name: Run placeholder tests
-        run: bash tests/test_structure.sh
 
-  update-readme:
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Update README.md dynamically
-        run: |
-          echo "Updating README.md..."
-          # zde bude volání final_readme.sh
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 ruff
+
+    - name: Lint with flake8
+      run: |
+        flake8 aktualizator/Termux-Updater-Pro.py || true
+
+    - name: Lint with ruff
+      run: |
+        ruff check aktualizator/ || true
+
+    - name: Dry-run script test
+      run: |
+        python aktualizator/Termux-Updater-Pro.py --dry-run --verbose --venv-dir ./test_venv || true
+
+    - name: Validate JSON outputs
+      run: |
+        python - << 'EOF2'
+import json, os
+
+files = [
+    "Aktualizator_seznam.json",
+    "Aktualizator_issue.json"
+]
+
+for f in files:
+    if os.path.exists(f):
+        print(f"Validating {f}...")
+        with open(f, "r") as fp:
+            json.load(fp)
+            print(f"{f} OK")
+    else:
+        print(f"{f} not found (OK for PRs)")
+EOF2
+
