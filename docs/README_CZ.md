@@ -1,1 +1,203 @@
+---
 
+📘 Termux-Updater Pro — Dokumentace (CZ)
+
+🧩 Přehled
+
+Termux-Updater Pro je pokročilý, plně automatizovaný aktualizační a údržbový systém
+pro prostředí Termux.
+
+Aktualizuje zároveň:
+
+balíčky pkg
+
+system pip
+
+libovolný počet virtuálních prostředí (venv)
+
+
+Automaticky řeší konflikty, generuje strukturované JSON reporty
+a zajišťuje dlouhodobou stabilitu i u náročných projektů.
+
+
+---
+
+🚀 Klíčové funkce
+
+Automatická aktualizace:
+
+Termux pkg balíčků
+
+Termux system pip balíčků
+
+všech pip balíčků uvnitř libovolného počtu venv
+
+
+Plně oddělené aktualizační pipelines
+
+Inteligentní detekce chyb a konfliktů
+
+Lock-file ochrana proti více současným spuštěním
+
+Export JSON:
+
+Aktualizator_seznam.json — čistý inventář aktualizací
+
+Aktualizator_issue.json — chyby, varování, konflikty
+
+
+Každodenní plně autonomní provoz
+
+Navrženo pro dlouhodobě běžící projekty a spolehlivost
+
+
+
+---
+
+📦 Struktura projektu
+
+Termux-Updater/
+│── aktualizator/
+│     └── Termux-Updater-Pro.py
+│
+│── docs/
+│     ├── README_CZ.md
+│     └── README_EN.md
+│
+│── images/
+│     └── diagram.png      (rezervace pro systémový diagram)
+│
+│── LICENSE
+└── README.md
+
+
+---
+
+⭐ Instalace
+
+1. Naklonování repozitáře
+
+git clone https://github.com/Ravarentoren/Termux-Updater.git
+cd Termux-Updater
+
+2. Nastavení práv
+
+chmod +x aktualizator/Termux-Updater-Pro.py
+
+3. Vytvoření globálního příkazu aktualizator
+
+ln -sf $(pwd)/aktualizator/Termux-Updater-Pro.py ~/bin/aktualizator
+
+Nyní můžeš spustit updater odkudkoliv v Termux jednoduše:
+
+aktualizator
+
+
+---
+
+🛠 Použití
+
+Základní spuštění
+
+aktualizator
+
+Spuštění s argumenty
+
+aktualizator --mode C --verbose --venv-dir ~/venv
+
+Testovací režim (bez provedení změn)
+
+aktualizator --dry-run --verbose
+
+
+---
+
+🧠 Přehled aktualizačních módů
+
+Mód	Popis
+
+A	pouze Termux pkg
+B	pkg + system pip
+C	pkg + system pip + všechny venv
+D	plně autonomní režim (doporučeno pro denní používání)
+
+
+
+---
+
+📄 JSON výstupní soubory
+
+Soubor	Popis
+
+Aktualizator_seznam.json	Čistý seznam aktualizovaných položek
+Aktualizator_issue.json	Chyby, varování, konflikty, logy
+
+
+Oba soubory jsou vždy zapisovány sem:
+
+~/storage/downloads/
+
+
+---
+
+📘 Dokumentace
+
+🇨🇿 Tento dokument: docs/README_CZ.md
+
+🇬🇧 English version: docs/README_EN.md
+
+
+
+---
+
+📝 Licence
+
+Tento projekt je duálně licencován pod:
+
+MIT License
+
+Apache License 2.0
+
+
+Uživatelé si mohou svobodně zvolit, kterou licenci chtějí použít.
+
+Tato kombinace zajišťuje:
+
+maximální svobodu pro použití, úpravy a integraci
+
+použití v komerčních i nekomerčních projektech
+
+kompatibilitu s většinou OS a vývojářských ekosystémů
+
+žádnou povinnost vracet změny zpět (na rozdíl od GPL)
+
+
+
+---
+
+🤝 Přispívání
+
+Příspěvky, nápady, vylepšení, testování i hlášení chyb jsou vítány.
+
+Projekt je navržen tak, aby byl:
+
+snadno pochopitelný i pro nové spolupracovníky
+
+rozšiřitelný
+
+stabilní a udržitelný pro mnoho let dopředu
+
+
+
+---
+
+❤️ Autoři
+
+Termux-Updater Pro je společná práce:
+
+Ravarentoren and ChatGPT (OpenAI)
+
+Cílem je vytvořit nejspolehlivější automatizační a aktualizační systém pro Termux.
+
+
+---
