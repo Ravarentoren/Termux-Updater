@@ -1,0 +1,37 @@
+name: Auto Changelog
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build_changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # nutné pro changelog
+
+      - name: Build Changelog
+        id: changelog
+        uses: mikepenz/release-changelog-builder-action@v3
+        with:
+          configuration: ".github/changelog-config.json"
+
+      - name: Save changelog to file
+        run: |
+          echo "${{ steps.changelog.outputs.changelog }}" > GENERATED_CHANGELOG.md
+          mkdir -p release
+          cp GENERATED_CHANGELOG.md release/CHANGELOG_${GITHUB_REF_NAME}.md
+
+      - name: Upload changelog to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: |
+            release/CHANGELOG_${{ github.ref_name }}.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
