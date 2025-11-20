@@ -1,17 +1,16 @@
-name: Automated Release
+name: Auto Release
 
 on:
-  workflow_dispatch:
   push:
     tags:
-      - "v*.*.*"
+      - "v*"
 
 jobs:
-  build-release:
+  release:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -19,20 +18,22 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Create artifacts
+      - name: Prepare version variable
+        id: vars
+        run: echo "VERSION=${{ github.ref_name }}" >> $GITHUB_ENV
+
+      - name: Create release archives
         run: |
-          mkdir -p release_build
-          cp -r aktualizator release_build/
-          cp README.md release_build/
-          tar -czf Termux-Updater-${{ github.ref_name }}.tar.gz release_build
-          zip -r Termux-Updater-${{ github.ref_name }}.zip release_build
+          mkdir -p release
+          tar -czf release/Termux-Updater-${VERSION}.tar.gz .
+          zip -r release/Termux-Updater-${VERSION}.zip .
 
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref_name }}
+          name: "Termux-Updater Pro ${VERSION}"
           files: |
-            Termux-Updater-${{ github.ref_name }}.zip
-            Termux-Updater-${{ github.ref_name }}.tar.gz
+            release/Termux-Updater-${VERSION}.tar.gz
+            release/Termux-Updater-${VERSION}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
