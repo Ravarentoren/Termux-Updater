@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="images/termux_updater_banner_github-1.png" 
+       alt="Termux-Updater Banner" 
+       style="max-width: 100%; border-radius: 12px;">
+</p>
+
+---
+
 # Termux-Updater Pro
 
 **Termux-Updater Pro** is an advanced, fully automated update and maintenance system  
