@@ -1,45 +1,38 @@
-name: Release & Notify
+name: Automated Release
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
   build-release:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Set up zip and tar utilities
-        run: sudo apt-get update && sudo apt-get install -y zip tar
-
-      - name: Create release tarball
-        run: |
-          mkdir -p release
-          tar -czf release/termux-updater-${{ github.ref_name }}.tar.gz *
-          zip -r release/termux-updater-${{ github.ref_name }}.zip *
-
-      - name: Upload release assets
-        uses: actions/upload-release-asset@v1
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: release/termux-updater-${{ github.ref_name }}.tar.gz
-          asset_name: termux-updater-${{ github.ref_name }}.tar.gz
-          asset_content_type: application/gzip
+          python-version: "3.12"
 
-      - name: Upload zip asset
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: release/termux-updater-${{ github.ref_name }}.zip
-          asset_name: termux-updater-${{ github.ref_name }}.zip
-          asset_content_type: application/zip
-
-      - name: Notify Discord (optional)
-        if: ${{ secrets.DISCORD_WEBHOOK_URL != '' }}
+      - name: Create artifacts
         run: |
-          curl -H "Content-Type: application/json" \
-            -X POST \
-            -d "{\"content\": \"✅ Termux-Updater release ${{ github.ref_name }} published!\"}" \
-            ${{ secrets.DISCORD_WEBHOOK_URL }}
+          mkdir -p release_build
+          cp -r aktualizator release_build/
+          cp README.md release_build/
+          tar -czf Termux-Updater-${{ github.ref_name }}.tar.gz release_build
+          zip -r Termux-Updater-${{ github.ref_name }}.zip release_build
+
+      - name: Upload Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: |
+            Termux-Updater-${{ github.ref_name }}.zip
+            Termux-Updater-${{ github.ref_name }}.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
