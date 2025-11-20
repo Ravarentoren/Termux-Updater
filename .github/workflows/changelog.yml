@@ -5,33 +5,27 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: write   # nutné pro zápis do CHANGELOG.md
+
 jobs:
-  build_changelog:
+  changelog:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0   # nutné pro changelog
 
-      - name: Build Changelog
+      - name: Generate Changelog
         id: changelog
-        uses: mikepenz/release-changelog-builder-action@v3
+        uses: metcalfc/changelog-generator@v4
         with:
-          configuration: ".github/changelog-config.json"
+          config-file: .github/changelog-config.json
 
-      - name: Save changelog to file
-        run: |
-          echo "${{ steps.changelog.outputs.changelog }}" > GENERATED_CHANGELOG.md
-          mkdir -p release
-          cp GENERATED_CHANGELOG.md release/CHANGELOG_${GITHUB_REF_NAME}.md
-
-      - name: Upload changelog to Release
-        uses: softprops/action-gh-release@v1
+      - name: Commit Changelog
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          tag_name: ${{ github.ref_name }}
-          files: |
-            release/CHANGELOG_${{ github.ref_name }}.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "Auto-update CHANGELOG for ${{ github.ref_name }}"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          file_pattern: CHANGELOG.md
