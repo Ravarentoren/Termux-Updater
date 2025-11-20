@@ -1,7 +1,13 @@
 <p align="center">
-  <img src="images/termux_updater_banner_github-1.png" 
-       alt="Termux-Updater Banner" 
-       style="max-width: 100%; border-radius: 12px;">
+  <img src="images/termux_updater_banner_github-1.png" width="650">
+</p>
+
+<p align="center">
+  <a href="https://github.com/Ravarentoren/Termux-Updater/releases"><img src="https://img.shields.io/github/v/release/Ravarentoren/Termux-Updater?color=5cb85c&label=Latest%20Release&style=for-the-badge"></a>
+  <a href="https://github.com/Ravarentoren/Termux-Updater/stargazers"><img src="https://img.shields.io/github/stars/Ravarentoren/Termux-Updater?style=for-the-badge"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT%20%2B%20Apache--2.0-blue.svg?style=for-the-badge"></a>
+  <a href="docs/README_EN.md"><img src="https://img.shields.io/badge/Docs-English-green?style=for-the-badge"></a>
+  <a href="docs/README_CZ.md"><img src="https://img.shields.io/badge/Docs-Czech-green?style=for-the-badge"></a>
 </p>
 
 ---
