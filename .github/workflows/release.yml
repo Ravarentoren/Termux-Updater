@@ -5,6 +5,9 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: write   # nutné pro vytvoření Release
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -19,8 +22,7 @@ jobs:
           python-version: "3.12"
 
       - name: Prepare version variable
-        id: vars
-        run: echo "VERSION=${{ github.ref_name }}" >> $GITHUB_ENV
+        run: echo "VERSION=${GITHUB_REF_NAME}" >> $GITHUB_ENV
 
       - name: Create release archives
         run: |
