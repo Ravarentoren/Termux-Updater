@@ -40,7 +40,7 @@ and ensures long-term stability for professional and long-term development workf
 
 ---
 
-## [BOX] Struktura projektu
+## 📦 Project Structure
 
 <p align="center">
   <picture>
@@ -49,7 +49,7 @@ and ensures long-term stability for professional and long-term development workf
   </picture>
 </p>
 
-## [BOX] Diagram architektury
+## 📦 Architecture Diagram
 
 <p align="center">
   <picture>
