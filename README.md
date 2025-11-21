@@ -40,9 +40,8 @@ and ensures long-term stability for professional and long-term development workf
 
 ---
 
-@@ ##  Struktura projektu
+##  Struktura projektu
 +
-+### Diagram architektury
 +
 +<p align="center">
 +  <img src="images/termux_updater_diagram.svg" alt="Diagram Termux Updateru" width="850"/>
