@@ -87,16 +87,22 @@ Navrženo pro dlouhodobě běžící projekty a spolehlivost
 
 ---
 
-## [BOX] Struktura projektu
+### [BOX] Struktura projektu
 
 <p align="center">
-  <img src="images/termux_project_structure.svg" alt="Struktura projektu — Termux Updater" width="950"/>
+  <picture>
+    <source srcset="../images/termux_updater_project_structure.svg" type="image/svg+xml">
+    <img src="../images/termux_updater_project_structure.png" width="950" alt="Projektová struktura — Termux Updater">
+  </picture>
 </p>
 
-## [BOX] Diagram architektury
+### [BOX] Diagram architektury
 
 <p align="center">
-  <img src="images/termux_updater_diagram.svg" alt="Diagram Termu Updateru" width="850"/>
+  <picture>
+    <source srcset="../images/termux_updater_diagram.svg" type="image/svg+xml">
+    <img src="../images/termux_updater_diagram.png" width="850" alt="Diagram architektury — Termux Updater">
+  </picture>
 </p>
 
 ---
