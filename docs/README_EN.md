@@ -1,36 +1,24 @@
 <p align="center">
-  2   <img src="images/termux_updater
-    _banner_github-1.png" width="650"
-    >
-  3 </p>
-  4
-  5 <p align="center">
-  6   <a href="https://github.com/Rav
-    arentoren/Termux-Updater/releases
-    "><img src="https://img.shields.i
-    o/github/v/release/Ravarentoren/T
-    ermux-Updater?color=5cb85c&label=
-    Latest%20Release&style=for-the-ba
-    dge"></a>
-  7   <a href="https://github.com/Rav
-    arentoren/Termux-Updater/stargaze
-    rs"><img src="https://img.shields
-    .io/github/stars/Ravarentoren/Ter
-    mux-Updater?style=for-the-badge">
-    </a>
-  8   <a href="LICENSE"><img src="htt
-    ps://img.shields.io/badge/License
-    -MIT%20%2B%20Apache--2.0-blue.svg
-    ?style=for-the-badge"></a>
-  9   <a href="docs/README_EN.md"><im
-    g src="https://img.shields.io/bad
-    ge/Docs-English-green?style=for-t
-    he-badge"></a>
- 10   <a href="docs/README_CZ.md"><im
-    g src="https://img.shields.io/bad
-    ge/Docs-Czech-green?style=for-the
-    -badge"></a>
- 11 </p>
+  <img src="../images/termux_updater_banner_github-1.png" width="650">
+</p>
+
+<p align="center">
+  <a href="https://github.com/Ravarentoren/Termux-Updater/releases">
+    <img src="https://img.shields.io/github/v/release/Ravarentoren/Termux-Updater?color=5cb85c&label=Latest%20Release&style=for-the-badge">
+  </a>
+  <a href="https://github.com/Ravarentoren/Termux-Updater/stargazers">
+    <img src="https://img.shields.io/github/stars/Ravarentoren/Termux-Updater?style=for-the-badge">
+  </a>
+  <a href="../LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT%20%2B%20Apache--2.0-blue.svg?style=for-the-badge">
+  </a>
+  <a href="README_EN.md">
+    <img src="https://img.shields.io/badge/Docs-English-green?style=for-the-badge">
+  </a>
+  <a href="README_CZ.md">
+    <img src="https://img.shields.io/badge/Docs-Czech-green?style=for-the-badge">
+  </a>
+</p>
 
 ### Termux-Updater Pro
 
