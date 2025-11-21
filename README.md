@@ -40,13 +40,13 @@ and ensures long-term stability for professional and long-term development workf
 
 ---
 
-## [BOX] Project Structure
+## 📦 Project Structure
 
 <p align="center">
 +  <img src="../images/termux_project_structure.svg" alt="Project structure — Termux Updater" width="950"/>
 </p>
 
-## [BOX] Architecture Diagram
+## 📦 Architecture Diagram
 
 <p align="center">
 +  <img src="../images/termux_updater_diagram.svg" alt="Termux Updater Diagram" width="850"/>
