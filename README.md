@@ -40,9 +40,13 @@ and ensures long-term stability for professional and long-term development workf
 
 ---
 
-## 📦 Project Structure
-
-Termux-Updater/ │── aktualizator/ │     └── Termux-Updater-Pro.py │── docs/ │     ├── README_CZ.md │     └── README_EN.md │── images/ │     └── diagram.png   (placeholder) │── LICENSE └── README.md
+@@ ##  Struktura projektu
++
++### Diagram architektury
++
++<p align="center">
++  <img src="images/termux_updater_diagram.svg" alt="Diagram Termux Updateru" width="850"/>
++</p>
 
 ---
 
