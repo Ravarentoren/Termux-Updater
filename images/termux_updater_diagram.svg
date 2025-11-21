@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <style>
+      .card { fill:#dbeef7; stroke:#3b6f9a; stroke-width:4; rx:18; ry:18; }
+      .inner { fill:#eef7fb; stroke:#9bbfd8; stroke-width:2; rx:10; ry:10; }
+      .pill { fill:#d9f0d9; stroke:#6aa86a; stroke-width:2; rx:10; ry:10; }
+      .text-title { font: bold 28px sans-serif; fill:#0b344a; }
+      .text { font: 18px sans-serif; fill:#083445; }
+      .small { font: 14px sans-serif; fill:#083445; }
+      .dash { stroke:#3b6f9a; stroke-width:3; fill:none; stroke-dasharray:8 8; marker-end: url(#arrow); }
+      .solid { stroke:#3b6f9a; stroke-width:3; fill:none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#3b6f9a"/>
+    </marker>
+  </defs>
+
+  <!-- Top-left: Termux-Updater Pro -->
+  <g transform="translate(60,40)">
+    <rect class="card" width="420" height="110" />
+    <text class="text-title" x="28" y="66">Termux-Updater Pro</text>
+  </g>
+
+  <!-- Top-right: Teeth box -->
+  <g transform="translate(720,40)">
+    <rect class="card" width="420" height="170" />
+    <text class="text-title" x="28" y="46">Teeth</text>
+    <text class="text" x="36" y="84">- Main.py</text>
+    <text class="text" x="36" y="112">- Virtualenv</text>
+    <text class="text" x="36" y="140">- Aktualizátor</text>
+  </g>
+
+  <!-- Update Workflow big box -->
+  <g transform="translate(60,180)">
+    <rect class="card" width="540" height="440" />
+    <text class="text-title" x="28" y="46">Update Workflow</text>
+
+    <!-- inner pills -->
+    <g transform="translate(60,90)">
+      <rect class="inner" x="0" y="0" width="420" height="68" />
+      <text class="text" x="18" y="42">Package Manager</text>
+    </g>
+
+    <g transform="translate(60,180)">
+      <rect class="inner" x="0" y="0" width="420" height="68" />
+      <text class="text" x="18" y="42">System pip</text>
+    </g>
+
+    <g transform="translate(60,270)">
+      <rect class="inner" x="0" y="0" width="420" height="68" />
+      <text class="text" x="18" y="42">Venv pips</text>
+    </g>
+  </g>
+
+  <!-- Arrow from Termux-Updater Pro down to Update Workflow -->
+  <path class="solid" d="M300 150 L300 200" />
+
+  <!-- JSON Export box (below Update Workflow) -->
+  <g transform="translate(60,650)">
+    <rect class="card" width="540" height="190" />
+    <text class="text-title" x="28" y="46">JSON Export</text>
+
+    <g transform="translate(30,80)">
+      <rect class="pill" x="0" y="0" width="220" height="68" />
+      <text class="text" x="18" y="42">Output Inventory</text>
+    </g>
+
+    <g transform="translate(290,80)">
+      <rect class="pill" x="0" y="0" width="220" height="68" />
+      <text class="text" x="18" y="42">Output Issues</text>
+    </g>
+  </g>
+
+  <!-- Lock System (small) near Update Workflow -->
+  <g transform="translate(540,380)">
+    <rect class="card" width="160" height="110" />
+    <text class="text-title" x="16" y="54">Lock System</text>
+  </g>
+
+  <!-- Dashed arrow from Lock System icon to Update Workflow -->
+  <path class="dash" d="M700 440 L620 440" />
+
+  <!-- CI box (right middle) -->
+  <g transform="translate(720,260)">
+    <rect class="card" width="420" height="300" />
+    <text class="text-title" x="28" y="46">CI</text>
+
+    <g transform="translate(36,86)">
+      <rect class="pill" x="0" y="0" width="340" height="56" />
+      <text class="text" x="16" y="36">Changelog</text>
+    </g>
+    <g transform="translate(36,156)">
+      <rect class="pill" x="0" y="0" width="340" height="56" />
+      <text class="text" x="16" y="36">GitHub Release</text>
+    </g>
+    <g transform="translate(36,226)">
+      <rect class="pill" x="0" y="0" width="340" height="56" />
+      <text class="text" x="16" y="36">Python Test</text>
+    </g>
+  </g>
+
+  <!-- Dotted arrow from CI to Teeth (dashed) -->
+  <path class="dash" d="M900 560 L900 210" />
+
+  <!-- Dashed arrow from Update Workflow to JSON Export -->
+  <path class="solid" d="M330 620 L330 650" />
+
+  <!-- Big Lock System bottom-right -->
+  <g transform="translate(720,820)">
+    <rect class="card" width="420" height="200" />
+    <text class="text-title" x="28" y="110">Lock System</text>
+    <!-- small lock icon -->
+    <g transform="translate(300,20) scale(0.9)">
+      <rect x="20" y="60" width="40" height="40" rx="6" ry="6" fill="#3b6f9a" />
+      <path d="M40 60 v-22 a18 18 0 0 1 36 0 v22" fill="none" stroke="#3b6f9a" stroke-width="6" />
+    </g>
+  </g>
+
+  <!-- Dotted arrow from Update Workflow to bottom Lock System -->
+  <path class="dash" d="M380 620 L900 900" />
+
+  <!-- small caption (optional) -->
+  <text class="small" x="60" y="1160">Diagram: proces aktualizace — Termux-Updater Pro (zkrácený přehled)</text>
+</svg>
