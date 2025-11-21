@@ -1,4 +1,38 @@
-# Termux-Updater Pro
+<p align="center">
+  2   <img src="images/termux_updater
+    _banner_github-1.png" width="650"
+    >
+  3 </p>
+  4
+  5 <p align="center">
+  6   <a href="https://github.com/Rav
+    arentoren/Termux-Updater/releases
+    "><img src="https://img.shields.i
+    o/github/v/release/Ravarentoren/T
+    ermux-Updater?color=5cb85c&label=
+    Latest%20Release&style=for-the-ba
+    dge"></a>
+  7   <a href="https://github.com/Rav
+    arentoren/Termux-Updater/stargaze
+    rs"><img src="https://img.shields
+    .io/github/stars/Ravarentoren/Ter
+    mux-Updater?style=for-the-badge">
+    </a>
+  8   <a href="LICENSE"><img src="htt
+    ps://img.shields.io/badge/License
+    -MIT%20%2B%20Apache--2.0-blue.svg
+    ?style=for-the-badge"></a>
+  9   <a href="docs/README_EN.md"><im
+    g src="https://img.shields.io/bad
+    ge/Docs-English-green?style=for-t
+    he-badge"></a>
+ 10   <a href="docs/README_CZ.md"><im
+    g src="https://img.shields.io/bad
+    ge/Docs-Czech-green?style=for-the
+    -badge"></a>
+ 11 </p>
+
+### Termux-Updater Pro
 
 **Termux-Updater Pro** is an advanced, fully automated update and maintenance system
 for the Termux environment.  
@@ -25,9 +59,17 @@ and ensures long-term stability for demanding development workflows.
 
 ---
 
-## 📦 Project Structure
+## [BOX] Project Structure
 
-Termux-Updater/ │── aktualizator/ │     └── Termux-Updater-Pro.py │ │── docs/ │     ├── README_CZ.md │     └── README_EN.md │ │── images/ │     └── diagram.png       (placeholder for system structure diagram) │ │── LICENSE └── README.md
+<p align="center">
+  <img src="../images/termux_project_structure.svg" alt="Project structure — Termux Updater" width="950"/>
+</p>
+
+## [BOX] Architecture Diagram
+
+<p align="center">
+  <img src="../images/termux_updater_diagram.svg" alt="Termux Updater Diagram" width="850"/>
+</p>
 
 ---
 

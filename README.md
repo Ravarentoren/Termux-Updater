@@ -12,7 +12,7 @@
 
 ---
 
-# Termux-Updater Pro
+### Termux-Updater Pro
 
 **Termux-Updater Pro** is an advanced, fully automated update and maintenance system  
 for the Termux environment.
@@ -40,12 +40,17 @@ and ensures long-term stability for professional and long-term development workf
 
 ---
 
-##  Struktura projektu
-+
-+
-+<p align="center">
-+  <img src="images/termux_updater_diagram.svg" alt="Diagram Termux Updateru" width="850"/>
-+</p>
+## [BOX] Project Structure
+
+<p align="center">
++  <img src="../images/termux_project_structure.svg" alt="Project structure — Termux Updater" width="950"/>
+</p>
+
+## [BOX] Architecture Diagram
+
+<p align="center">
++  <img src="../images/termux_updater_diagram.svg" alt="Termux Updater Diagram" width="850"/>
+</p>
 
 ---
 
