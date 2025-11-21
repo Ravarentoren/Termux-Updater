@@ -40,26 +40,6 @@ and ensures long-term stability for professional and long-term development workf
 
 ---
 
-## 📦 Project Structure
-
-<p align="center">
-  <picture>
-    <source srcset="images/termux_updater_project_structure.svg" type="image/svg+xml">
-    <img src="images/termux_updater_project_structure.png" width="950" alt="Projektová struktura — Termux Updater">
-  </picture>
-</p>
-
-## 📦 Architecture Diagram
-
-<p align="center">
-  <picture>
-    <source srcset="images/termux_updater_diagram.svg" type="image/svg+xml">
-    <img src="images/termux_updater_diagram.png" width="850" alt="Diagram architektury — Termux Updater">
-  </picture>
-</p>
-
----
-
 ## ⭐ Installation
 
 ### 1. Clone the repository
