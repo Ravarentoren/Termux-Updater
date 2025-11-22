@@ -1,3 +1,5 @@
+### Termux-Updater Pro
+
 <p align="center">
   <img src="../images/termux_updater_banner_github-1.png" width="650">
 </p>
@@ -19,8 +21,6 @@
     <img src="https://img.shields.io/badge/Docs-Czech-green?style=for-the-badge">
   </a>
 </p>
-
-### Termux-Updater Pro
 
 **Termux-Updater Pro** is an advanced, fully automated update and maintenance system
 for the Termux environment.  
