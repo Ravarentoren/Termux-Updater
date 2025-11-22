@@ -1,142 +1,151 @@
 <p align="center">
-  <img src="images/termux_updater_banner_github-1.png" width="650">
+  <img src="../images/termux_updater_banner_github-1.png" width="650">
 </p><p align="center">
   <a href="https://github.com/Ravarentoren/Termux-Updater/releases"><img src="https://img.shields.io/github/v/release/Ravarentoren/Termux-Updater?color=5cb85c&label=Latest%20Release&style=for-the-badge"></a>
   <a href="https://github.com/Ravarentoren/Termux-Updater/stargazers"><img src="https://img.shields.io/github/stars/Ravarentoren/Termux-Updater?style=for-the-badge"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT%20%2B%20Apache--2.0-blue.svg?style=for-the-badge"></a>
-  <a href="docs/README_CZ.md"><img src="https://img.shields.io/badge/Docs-Czech-green?style=for-the-badge"></a>
+  <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT%20%2B%20Apache--2.0-blue.svg?style=for-the-badge"></a>
+  <a href="README_CZ.md"><img src="https://img.shields.io/badge/Docs-Czech-green?style=for-the-badge"></a>
 </p>
 ---
 
-Termux-Updater Pro (česky) is an advanced, fully automated update and maintenance system
-for the Termux environment.
+Termux-Updater Pro je pokročilý, plně automatizovaný systém pro aktualizaci a údržbu prostředí Termux.
 
-It updates pkg, system pip, and multiple virtual environments (venv) simultaneously,
-handles conflicts intelligently, generates structured JSON reports,
-and ensures long-term stability for demanding or professional workflows.
-
-
----
-
-🚀 Key Features
-
-Automatic updates for:
-
-Termux pkg packages
-
-Termux system pip packages
-
-All pip packages across any number of virtual environments
-
-
-Independent update pipelines (pkg / pip / venv)
-
-Intelligent conflict detection and resolution
-
-Lock system to prevent multiple parallel runs
-
-JSON reporting:
-
-Aktualizator_seznam.json — clean inventory of updated packages
-
-Aktualizator_issue.json — warnings, conflicts, errors
-
-
-Fully autonomous daily operation
-
-Designed for long-term project reliability and reproducibility
-
+Aktualizuje pkg, system pip i více virtuálních prostředí (venv) současně,
+inteligentně řeší konflikty, generuje strukturované JSON reporty
+a zajišťuje dlouhodobou stabilitu pro vývojové i produkční nasazení.
 
 
 ---
 
-⭐ Installation
+🚀 Klíčové vlastnosti
 
-1. Clone the repository
+Automatická aktualizace:
+
+Termux balíčků (pkg)
+
+systémových pip balíčků (system pip)
+
+pip balíčků uvnitř libovolného počtu virtuálních prostředí
+
+
+Nezávislé aktualizační pipeline pro pkg / pip / venv
+
+Inteligentní detekce a řešení konfliktů
+
+Ochrana proti paralelnímu běhu – process-lock
+
+JSON výstupy:
+
+Aktualizator_seznam.json — čistý seznam aktualizovaných položek
+
+Aktualizator_issue.json — varování, konflikty a chyby
+
+
+Plně autonomní každodenní provoz
+
+Navrženo pro dlouhodobou udržitelnost projektů a reprodukovatelnost
+
+
+
+---
+
+⭐ Instalace
+
+1. Naklonování repozitáře
 
 git clone https://github.com/Ravarentoren/Termux-Updater.git
 cd Termux-Updater
 
-2. Make the updater executable
+2. Zpřístupnění updateru
 
 chmod +x aktualizator/Termux-Updater-Pro.py
 
-3. Create a global Termux command
+3. Vytvoření globálního příkazu Termuxu
 
 ln -sf $(pwd)/aktualizator/Termux-Updater-Pro.py ~/bin/aktualizator
 
 
 ---
 
-🛠 Usage
+🛠 Použití
 
-Basic run
+Základní spuštění:
 
 aktualizator
 
-Run with custom configuration
+Vlastní konfigurace:
 
 aktualizator --mode C --verbose --venv-dir ~/venv
 
-Dry-run mode (no changes applied)
+Testovací běh (bez změn):
 
 aktualizator --dry-run --verbose
 
 
 ---
 
-🧠 Update Modes Overview
+🧠 Přehled aktualizačních módů
 
-A — Termux pkg only
-B — pkg + system pip
-C — pkg + system pip + all venv pip environments
-D — Full autonomous mode (recommended)
+Mód	Popis
+
+A	Pouze Termux pkg
+B	pkg + system pip
+C	pkg + system pip + všechny venv pip prostředí
+D	Plně autonomní režim (doporučeno pro každodenní použití)
+
 
 
 ---
 
-📄 JSON Output Files
+📄 JSON výstupní soubory
 
-Aktualizator_seznam.json — clean list of updated items
-Aktualizator_issue.json — warnings, conflicts, errors
+Soubor	Popis
 
-Both files are always stored in:
+Aktualizator_seznam.json	Čistý seznam aktualizovaných položek
+Aktualizator_issue.json	Varování, chyby, konflikty
+
+
+Oba soubory se ukládají do:
+
 ~/storage/downloads/
 
 
 ---
 
-📘 Documentation
+📘 Dokumentace
 
-Czech documentation: docs/README_CZ.md
+Česká dokumentace: docs/README_CZ.md
+
+Anglická dokumentace: hlavní README.md
+
 
 
 ---
 
-📝 License
+📝 Licence
 
-This project is dual-licensed under:
+Projekt je duálně licencován pod:
 
 MIT License
 
 Apache License 2.0
 
 
-You may freely choose either license as needed.
+Je možné si svobodně zvolit tu, která vyhovuje více.
 
 
 ---
 
-🤝 Contributing
+🤝 Přispívání
 
-Contributions, ideas, improvements, tests, and bug reports are welcome.
-The project is designed to be open, transparent, and community-friendly.
+Příspěvky, nápady, vylepšení i hlášení chyb jsou vítány.
+Cílem je dlouhodobě udržitelný, otevřený a komunitní projekt.
 
 
 ---
 
-❤️ Credits
+❤️ Autoři
 
-Termux-Updater Pro (česky) is a collaboration between
-Ravarentoren and ChatGPT (OpenAI),
-built to create one of the most reliable Termux automation and update systems.
+Termux-Updater Pro je společný projekt
+Ravarentorena a ChatGPT (OpenAI)
+s cílem vytvořit nejspolehlivější automatizovaný aktualizační systém pro Termux.

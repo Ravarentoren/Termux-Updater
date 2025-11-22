@@ -1,41 +1,39 @@
 <p align="center">
   <img src="images/termux_updater_banner_github-1.png" width="650">
-</p><p align="center">
+</p><!-- NO-TRANSLATE-START --><p align="center">
   <a href="https://github.com/Ravarentoren/Termux-Updater/releases"><img src="https://img.shields.io/github/v/release/Ravarentoren/Termux-Updater?color=5cb85c&label=Latest%20Release&style=for-the-badge"></a>
   <a href="https://github.com/Ravarentoren/Termux-Updater/stargazers"><img src="https://img.shields.io/github/stars/Ravarentoren/Termux-Updater?style=for-the-badge"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT%20%2B%20Apache--2.0-blue.svg?style=for-the-badge"></a>
   <a href="docs/README_CZ.md"><img src="https://img.shields.io/badge/Docs-Czech-green?style=for-the-badge"></a>
 </p>
----
-
-Termux-Updater Pro is an advanced, fully automated update and maintenance system
+<!-- NO-TRANSLATE-END -->Termux-Updater Pro is an advanced, fully automated update and maintenance system
 for the Termux environment.
 
 It updates pkg, system pip, and multiple virtual environments (venv) simultaneously,
 handles conflicts intelligently, generates structured JSON reports,
-and ensures long-term stability for demanding or professional workflows.
+and ensures long-term stability for professional and long-term development workflows.
 
 
 ---
 
 🚀 Key Features
 
-Automatic updates for:
+Automatic update of:
 
 Termux pkg packages
 
 Termux system pip packages
 
-All pip packages across any number of virtual environments
+All pip packages inside any number of virtual environments
 
 
-Independent update pipelines (pkg / pip / venv)
+Independent update pipelines for pkg / pip / venvs
 
 Intelligent conflict detection and resolution
 
-Lock system to prevent multiple parallel runs
+Process lock protection (no parallel runs)
 
-JSON reporting:
+JSON reports:
 
 Aktualizator_seznam.json — clean inventory of updated packages
 
@@ -44,7 +42,7 @@ Aktualizator_issue.json — warnings, conflicts, errors
 
 Fully autonomous daily operation
 
-Designed for long-term project reliability and reproducibility
+Designed for long-term project survival and reproducibility
 
 
 
@@ -54,61 +52,61 @@ Designed for long-term project reliability and reproducibility
 
 1. Clone the repository
 
-git clone https://github.com/Ravarentoren/Termux-Updater.git
+<!-- NO-TRANSLATE-START -->git clone https://github.com/Ravarentoren/Termux-Updater.git
 cd Termux-Updater
 
-2. Make the updater executable
+<!-- NO-TRANSLATE-END -->2. Make the updater executable
 
-chmod +x aktualizator/Termux-Updater-Pro.py
+<!-- NO-TRANSLATE-START -->chmod +x aktualizator/Termux-Updater-Pro.py
 
-3. Create a global Termux command
+<!-- NO-TRANSLATE-END -->3. Create a global Termux command
 
-ln -sf $(pwd)/aktualizator/Termux-Updater-Pro.py ~/bin/aktualizator
+<!-- NO-TRANSLATE-START -->ln -sf $(pwd)/aktualizator/Termux-Updater-Pro.py ~/bin/aktualizator
 
-
+<!-- NO-TRANSLATE-END -->
 ---
 
 🛠 Usage
 
-Basic run
-
-aktualizator
+Basic run aktualizator
 
 Run with custom configuration
+<!-- NO-TRANSLATE-START -->
+aktualizator --mode C --verbose --venv-dir ~/venv<!-- NO-TRANSLATE-END -->
 
-aktualizator --mode C --verbose --venv-dir ~/venv
-
-Dry-run mode (no changes applied)
-
-aktualizator --dry-run --verbose
-
-
+Dry-run test (no changes applied)
+<!-- NO-TRANSLATE-START -->
+aktualizator --dry-run --verbose<!-- NO-TRANSLATE-END -->
 ---
 
 🧠 Update Modes Overview
 
-A — Termux pkg only
-B — pkg + system pip
-C — pkg + system pip + all venv pip environments
-D — Full autonomous mode (recommended)
+<!-- NO-TRANSLATE-START -->Mode	Description<!-- NO-TRANSLATE-END -->
 
-
+A<!-- NO-TRANSLATE-START -->Termux pkg<!-- NO-TRANSLATE-END --> only
+B	pkg + system pip
+C	pkg + system pip +<!-- NO-TRANSLATE-START --> all venv pip<!-- NO-TRANSLATE-END --> environments
+D	Full autonomous mode (daily use) — recommended
 ---
 
 📄 JSON Output Files
 
-Aktualizator_seznam.json — clean list of updated items
-Aktualizator_issue.json — warnings, conflicts, errors
-
+File Description
+<!-- NO-TRANSLATE-START -->
+Aktualizator_seznam.json <!-- NO-TRANSLATE-END -->Clean list of updated items
+<!-- NO-TRANSLATE-START -->
+Aktualizator_issue.json <!-- NO-TRANSLATE-END -->All warnings, conflicts, error.
 Both files are always stored in:
-~/storage/downloads/
 
+<!-- NO-TRANSLATE-START -->~/storage/downloads/
 
+<!-- NO-TRANSLATE-END -->
 ---
 
 📘 Documentation
 
 Czech documentation: docs/README_CZ.md
+
 
 
 ---
@@ -122,7 +120,7 @@ MIT License
 Apache License 2.0
 
 
-You may freely choose either license as needed.
+You may freely choose either license according to your needs.
 
 
 ---
@@ -139,4 +137,4 @@ The project is designed to be open, transparent, and community-friendly.
 
 Termux-Updater Pro is a collaboration between
 Ravarentoren and ChatGPT (OpenAI),
-built to create one of the most reliable Termux automation and update systems.
+built to create the world’s most reliable Termux automation and update system.
