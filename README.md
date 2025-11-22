@@ -10,9 +10,6 @@
   <a href="docs/README_CZ.md"><img src="https://img.shields.io/badge/Docs-Czech-green?style=for-the-badge"></a>
 </p>
 
----
-
-### Termux-Updater Pro
 
 **Termux-Updater Pro** is an advanced, fully automated update and maintenance system  
 for the Termux environment.

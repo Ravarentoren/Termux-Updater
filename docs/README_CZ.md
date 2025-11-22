@@ -1,5 +1,3 @@
-### Termux-Updater
-
 <p align="center">
   <img src="../images/termux_updater_banner_github-1.png" width="650">
 </p>
