@@ -1,10 +1,24 @@
 <p align="center">
   <img src="images/termux_updater_banner_github-1.png" width="650">
-</p><!-- NO-TRANSLATE-START --><p align="center">
-  <a href="https://github.com/Ravarentoren/Termux-Updater/releases"><img src="https://img.shields.io/github/v/release/Ravarentoren/Termux-Updater?color=5cb85c&label=Latest%20Release&style=for-the-badge"></a>
-  <a href="https://github.com/Ravarentoren/Termux-Updater/stargazers"><img src="https://img.shields.io/github/stars/Ravarentoren/Termux-Updater?style=for-the-badge"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT%20%2B%20Apache--2.0-blue.svg?style=for-the-badge"></a>
-  <a href="docs/README_CZ.md"><img src="https://img.shields.io/badge/Docs-Czech-green?style=for-the-badge"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Ravarentoren/Termux-Updater/releases">
+    <img src="https://img.shields.io/github/v/release/Ravarentoren/Termux-Updater?color=5cb85c&label=Latest%20Release&style=for-the-badge">
+  </a>
+  <a href="https://github.com/Ravarentoren/Termux-Updater/stargazers">
+    <img src="https://img.shields.io/github/stars/Ravarentoren/Termux-Updater?style=for-the-badge">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT%20%2B%20Apache--2.0-blue.svg?style=for-the-badge">
+  </a>
+  <a href="docs/README_CZ.md">
+    <img src="https://img.shields.io/badge/Docs-Czech-green?style=for-the-badge">
+  </a>
+  <!-- DONATION BUTTON LAST -->
+  <a href="https://www.paypal.com/donate/?hosted_button_id=TZR7VNGUEDE7L">
+    <img src="https://img.shields.io/badge/Donate-PayPal-0070ba?style=for-the-badge&logo=paypal">
+  </a>
 </p>
 <!-- NO-TRANSLATE-END -->Termux-Updater Pro is an advanced, fully automated update and maintenance system
 for the Termux environment.
