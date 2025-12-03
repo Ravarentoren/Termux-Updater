@@ -19,6 +19,9 @@
   <a href="https://www.paypal.com/donate/?hosted_button_id=TZR7VNGUEDE7L">
     <img src="https://img.shields.io/badge/Donate-PayPal-0070ba?style=for-the-badge&logo=paypal">
   </a>
+  <a href="https://ko-fi.com/ravarentoren">
+    <img src="https://ko-fi.com/img/githubbutton_sm.svg" />
+  </a>
 </p>
 <!-- NO-TRANSLATE-END -->Termux-Updater Pro is an advanced, fully automated update and maintenance system
 for the Termux environment.
