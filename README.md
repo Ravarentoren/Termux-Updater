@@ -15,14 +15,19 @@
   <a href="docs/README_CZ.md">
     <img src="https://img.shields.io/badge/Docs-Czech-green?style=for-the-badge">
   </a>
-  <!-- DONATION BUTTON LAST -->
-  <a href="https://www.paypal.com/donate/?hosted_button_id=TZR7VNGUEDE7L">
-    <img src="https://img.shields.io/badge/Donate-PayPal-0070ba?style=for-the-badge&logo=paypal">
-  </a>
-  <a href="https://ko-fi.com/ravarentoren">
-    <img src="https://ko-fi.com/img/githubbutton_sm.svg" />
-  </a>
-</p>
+  <!-- DONATION BUTTONS -->
+<a href="https://www.paypal.com/donate/?hosted_button_id=TZR7VNGUEDE7L">
+  <img src="https://img.shields.io/badge/Donate-PayPal-0070ba?style=for-the-badge&logo=paypal">
+</a>
+
+<a href="https://ko-fi.com/ravarentoren">
+  <img src="https://ko-fi.com/img/githubbutton_sm.svg" />
+</a>
+
+<a href="https://liberapay.com/Ravarentoren/">
+  <img src="https://img.shields.io/liberapay/patrons/Ravarentoren.svg?style=for-the-badge&logo=liberapay">
+</a>
+  <a href="https://ko-fi.com/rava
 <!-- NO-TRANSLATE-END -->Termux-Updater Pro is an advanced, fully automated update and maintenance system
 for the Termux environment.
 
