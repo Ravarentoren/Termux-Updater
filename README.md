@@ -53,9 +53,9 @@ system stability matters more than blind updates.
   - All `pip` packages inside any number of **virtual environments (venv)**
 
 - Independent update pipelines for:
-  - `pkg`
-  -  system `pip`
-  -  venv `pip`
+  -  pkg
+  -  system pip
+  -  venv pip
 
 - Intelligent conflict detection and reporting  
 - Safe process locking (no parallel runs)  
@@ -128,6 +128,7 @@ aktualizator --dry-run --verbose
 ## 🧠 Update Modes Overview
 
 ### Mode	Description:
+
 
 
 A) 	Termux pkg only
