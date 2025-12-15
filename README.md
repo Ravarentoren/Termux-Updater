@@ -42,6 +42,60 @@ system stability matters more than blind updates.
 <!-- NO-TRANSLATE-END -->
 
 
+---
+
+## 🚀 Quick Install (Termux)
+
+Run this command directly in Termux:
+
+<!-- NO-TRANSLATE-START -->
+  bash:
+<!-- NO-TRANSLATE-END -->
+
+<!-- NO-TRANSLATE-START -->
+pkg install git -y && \
+git clone https://github.com/Ravarentoren/Termux-Updater.git && \
+cd Termux-Updater && \
+chmod +x aktualizator/Termux-Updater-Pro.py && \
+mkdir -p ~/bin && \
+ln -sf "$(pwd)/aktualizator/Termux-Updater-Pro.py" ~/bin/aktualizator
+<!-- NO-TRANSLATE-END -->
+
+
+After installation, simply run:
+
+<!-- NO-TRANSLATE-START -->
+aktualizator
+<!-- NO-TRANSLATE-END -->
+
+
+## ⚡ One-line Installation (Recommended)
+
+For Termux users who want a fast and safe installation:
+
+<!-- NO-TRANSLATE-START -->
+   bash:
+<!-- NO-TRANSLATE-END -->
+pkg install -y curl
+curl -fsSL https://raw.githubusercontent.com/Ravarentoren/Termux-Updater/main/scripts/install_termux_updater.sh | bash
+<!-- NO-TRANSLATE-END -->
+
+This will:
+
+install required dependencies
+
+clone or update Termux-Updater Pro
+
+create a global aktualizator command
+
+keep everything inside your home directory (no root)
+
+
+After installation, simply run:
+<!-- NO-TRANSLATE-START -->
+aktualizator
+<!-- NO-TRANSLATE-END -->
+
 
 ---
 
