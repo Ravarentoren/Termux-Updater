@@ -77,29 +77,28 @@ All reports are always stored in:
 <!-- NO-TRANSLATE-START -->
 git clone https://github.com/Ravarentoren/Termux-Updater.git
 cd Termux-Updater
-
-<!-- NO-TRANSLATE-END -->2. Make the updater executable
-
-<!-- NO-TRANSLATE-START -->chmod +x aktualizator/Termux-Updater-Pro.py
-
-<!-- NO-TRANSLATE-END -->3. Create a global Termux command
-
-<!-- NO-TRANSLATE-START -->ln -sf $(pwd)/aktualizator/Termux-Updater-Pro.py ~/bin/aktualizator
-
 <!-- NO-TRANSLATE-END -->
+
+2. Make the updater executable
+
+<!-- NO-TRANSLATE-START -->chmod +x aktualizator/Termux-Updater-Pro.py<!-- NO-TRANSLATE-END -->
+
+3. Create a global Termux command
+
+<!-- NO-TRANSLATE-START -->ln -sf $(pwd)/aktualizator/Termux-Updater-Pro.py ~/bin/aktualizator<!-- NO-TRANSLATE-END -->
+
 ---
 
 🛠 Usage
 
 Basic run
 
-<!-- NO-TRANSLATE-START -->aktualizator
+<!-- NO-TRANSLATE-START -->aktualizator<!-- NO-TRANSLATE-END -->
 
-<!-- NO-TRANSLATE-END -->Custom configuration
+Custom configuration
 
-<!-- NO-TRANSLATE-START -->aktualizator --mode C --verbose --venv-dir ~/venv
-
-<!-- NO-TRANSLATE-END -->Dry-run test (no changes applied)
+<!-- NO-TRANSLATE-START -->aktualizator --mode C --verbose --venv-dir ~/venv<!-- NO-TRANSLATE-END -->
+Dry-run test (no changes applied)
 
 <!-- NO-TRANSLATE-START -->aktualizator --dry-run --verbose
 
