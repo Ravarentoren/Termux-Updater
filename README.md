@@ -83,13 +83,13 @@ git clone https://github.com/Ravarentoren/Termux-Updater.git
 cd Termux-Updater
 <!-- NO-TRANSLATE-END -->
 
-2. Make the updater executable
+### 2. Make the updater executable
 
 <!-- NO-TRANSLATE-START -->
 chmod +x aktualizator/Termux-Updater-Pro.py
 <!-- NO-TRANSLATE-END -->
 
-3. Create a global Termux command
+### 3. Create a global Termux command
 
 <!-- NO-TRANSLATE-START -->
 lsfn
@@ -126,16 +126,16 @@ aktualizator --dry-run --verbose
 
 🧠 Update Modes Overview
 
-Mode	Description
+Mode	Description:
 
 
-A	Termux pkg only
+A) 	Termux pkg only
 
-B	pkg + system pip
+B) 	pkg + system pip
 
-C	pkg + system pip + all venv pip
+C) 	pkg + system pip + all venv pip
 
-D	Full autonomous mode (recommended)
+D) 	Full autonomous mode (recommended)
 
 
 
