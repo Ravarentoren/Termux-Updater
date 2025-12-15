@@ -203,6 +203,26 @@ Czech documentation:
 docs/README_CZ.md
 
 
+---
+
+## 💬 Community & Discussions
+
+Termux-Updater Pro is an open project and community feedback is welcome.
+
+You can use GitHub Discussions to:
+- ask questions
+- share ideas or feature requests
+- discuss workflows and setups
+- give feedback (positive or critical)
+
+👉 Join the discussion here:
+
+<!-- NO-TRANSLATE-START -->
+https://github.com/Ravarentoren/Termux-Updater/discussions
+<!-- NO-TRANSLATE-END -->
+
+For concrete bugs or reproducible problems, please use **Issues** instead.
+
 
 ---
 
