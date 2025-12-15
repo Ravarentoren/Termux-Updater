@@ -99,23 +99,23 @@ ln -sf "$(pwd)/aktualizator/Termux-Updater-Pro.py" ~/bin/aktualizator
 
 ---
 
-🛠 Usage
+## 🛠 Usage
 
-Basic run
+### Basic run
 
 <!-- NO-TRANSLATE-START -->
 aktualizator
 <!-- NO-TRANSLATE-END -->
 
 
-Custom configuration
+### Custom configuration
 
 <!-- NO-TRANSLATE-START -->
 aktualizator --mode C --verbose --venv-dir ~/venv
 <!-- NO-TRANSLATE-END -->
 
 
-Dry-run test (no changes applied)
+### Dry-run test (no changes applied)
 
 <!-- NO-TRANSLATE-START -->
 aktualizator --dry-run --verbose
@@ -125,9 +125,9 @@ aktualizator --dry-run --verbose
 
 ---
 
-🧠 Update Modes Overview
+## 🧠 Update Modes Overview
 
-Mode	Description:
+### Mode	Description:
 
 
 A) 	Termux pkg only
@@ -142,7 +142,7 @@ D) 	Full autonomous mode (recommended)
 
 ---
 
-📘 Documentation
+## 📘 Documentation
 
 Czech documentation:
 docs/README_CZ.md
@@ -151,9 +151,9 @@ docs/README_CZ.md
 
 ---
 
-📝 License
+## 📝 License
 
-This project is dual-licensed under:
+### This project is dual-licensed under:
 
 MIT License
 
@@ -165,7 +165,7 @@ You may freely choose either license according to your needs.
 
 ---
 
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions, ideas, improvements, tests, and bug reports are welcome.
 The project is designed to be open, transparent, and community-friendly.
@@ -173,7 +173,7 @@ The project is designed to be open, transparent, and community-friendly.
 
 ---
 
-❤️ Credits
+## ❤️ Credits
 
 Termux-Updater Pro is a collaboration between
 Ravarentoren and ChatGPT (OpenAI),
