@@ -75,7 +75,6 @@ All reports are always stored in:
 ### 1. Clone the repository
 
 <!-- NO-TRANSLATE-START -->
-```bash
 git clone https://github.com/Ravarentoren/Termux-Updater.git
 cd Termux-Updater
 
