@@ -41,6 +41,8 @@ system stability matters more than blind updates.
 
 <!-- NO-TRANSLATE-END -->
 
+
+
 ---
 
 ## 🚀 Key Features
@@ -68,6 +70,8 @@ All reports are always stored in:
 
 ~/storage/downloads/
 
+
+
 ---
 
 ## ⭐ Installation
@@ -92,6 +96,8 @@ lsfn
 $(pwd)/aktualizator/Termux-Updater-Pro.py ~/bin/aktualizator
 <!-- NO-TRANSLATE-END -->
 
+
+
 ---
 
 🛠 Usage
@@ -114,15 +120,21 @@ Dry-run test (no changes applied)
 aktualizator --dry-run --verbose
 <!-- NO-TRANSLATE-END -->
 
+
+
 ---
 
 🧠 Update Modes Overview
 
 Mode	Description
 
+
 A	Termux pkg only
+
 B	pkg + system pip
+
 C	pkg + system pip + all venv pip
+
 D	Full autonomous mode (recommended)
 
 
