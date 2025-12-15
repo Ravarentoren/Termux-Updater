@@ -54,8 +54,8 @@ system stability matters more than blind updates.
 
 - Independent update pipelines for:
   - `pkg`
-  - system `pip`
-  - venv `pip`
+  -  system `pip`
+  -  venv `pip`
 
 - Intelligent conflict detection and reporting  
 - Safe process locking (no parallel runs)  
