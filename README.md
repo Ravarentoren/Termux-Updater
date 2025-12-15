@@ -92,8 +92,7 @@ chmod +x aktualizator/Termux-Updater-Pro.py
 ### 3. Create a global Termux command
 
 <!-- NO-TRANSLATE-START -->
-lsfn
-$(pwd)/aktualizator/Termux-Updater-Pro.py ~/bin/aktualizator
+ln -sf "$(pwd)/aktualizator/Termux-Updater-Pro.py" ~/bin/aktualizator
 <!-- NO-TRANSLATE-END -->
 
 
@@ -108,11 +107,13 @@ Basic run
 aktualizator
 <!-- NO-TRANSLATE-END -->
 
+
 Custom configuration
 
 <!-- NO-TRANSLATE-START -->
 aktualizator --mode C --verbose --venv-dir ~/venv
 <!-- NO-TRANSLATE-END -->
+
 
 Dry-run test (no changes applied)
 
