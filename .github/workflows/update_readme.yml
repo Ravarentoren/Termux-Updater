@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup bash
-        uses: microsoft/setup-msys2@v2
+
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y jq curl
+
       - name: Run final_readme.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
