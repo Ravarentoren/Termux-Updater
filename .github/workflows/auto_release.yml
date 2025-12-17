@@ -15,9 +15,6 @@ jobs:
       - name: Set up Termux simulation (optional)
         run: echo "Termux simulation step placeholder"
 
-      - name: Update README + badges
-        run: bash ./update_readme_release.sh
-
       - name: Create release archive
         run: |
           mkdir -p release_tmp
