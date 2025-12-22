@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="130" height="28"
+     viewBox="0 0 130 28">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="130" height="28" rx="4" fill="#1E1E1E"/>
+
+  <!-- Terminal icon background -->
+  <rect x="10.88" y="6.70" width="14.69" height="14.97" rx="1.04" fill="#000000"/>
+
+  <!-- Circular arrow -->
+  <path d="M28.61,7.83
+           A12.18 12.01 336 1 1 23.15,3.13"
+        fill="none"
+        stroke="#4CAF50"
+        stroke-width="1.26"
+        stroke-linecap="round"/>
+
+  <path d="M21.65,4.68 L24.34,3.81 L23.61,1.32"
+        fill="none"
+        stroke="#4CAF50"
+        stroke-width="1.26"
+        stroke-linecap="round"/>
+
+  <!-- Terminal symbol -->
+  <path d="M13.26,19.04 L16.52,14.19 L13.26,8.85"
+        fill="none"
+        stroke="#FFFFFF"
+        stroke-width="1.26"
+        stroke-linecap="round"/>
+
+  <path d="M17.85,19.04 L23.15,19.04"
+        fill="none"
+        stroke="#FFFFFF"
+        stroke-width="1.26"
+        stroke-linecap="round"/>
+
+  <!-- Text -->
+  <text x="44" y="18"
+        font-size="12"
+        fill="#4CAF50"
+        font-family="Arial, Helvetica, sans-serif">
+    Termux-Updater
+  </text>
+
+</svg>
