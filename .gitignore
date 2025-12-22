@@ -1,5 +1,6 @@
 # Log files
 logs/*
+!logs/.gitkeep
 *.log
 
 # Temporary files
