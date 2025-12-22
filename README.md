@@ -1,7 +1,14 @@
 <p align="center">
+  <img src="images/termux_updater_banner_github-1.png" width="650">
+</p>
+
+<p align="center">
   <a href="https://github.com/Ravarentoren/Termux-Updater/releases">
-    <img src="images/Badge_Termux-Updater.png" alt="Download Termux-Updater">
+    <img src="images/Badge_Termux-Updater.svg" alt="Download Termux-Updater">
   </a>
+</p>
+
+<p align="center">
   <a href="https://github.com/Ravarentoren/Termux-Updater/stargazers">
     <img src="https://img.shields.io/github/stars/Ravarentoren/Termux-Updater?style=for-the-badge">
   </a>
@@ -126,7 +133,7 @@ All reports are always stored in:
 
 ## ⭐ Installation
 
-[![Download Termux-Updater](images/Badge_Termux-Updater.png)](https://github.com/Ravarentoren/Termux-Updater/releases)
+[![Download Termux-Updater](images/Badge_Termux-Updater.svg)](https://github.com/Ravarentoren/Termux-Updater/releases)
 
 ### 1. Clone the repository
 
