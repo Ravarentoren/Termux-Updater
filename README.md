@@ -38,11 +38,11 @@
 <!-- NO-TRANSLATE-START -->
 ## Termux-Updater Pro
 
-# Termux-Updater Pro is a reliable automation script for updating and maintaining Termux environments on Android, including fixing broken updates, detecting package conflicts, and managing both `pkg` and `pip` dependencies.
+ Termux-Updater Pro is a reliable automation script for updating and maintaining Termux environments on Android, including fixing broken updates, detecting package conflicts, and managing both `pkg` and `pip` dependencies.
 
-# It is intended for users frustrated by failed upgrades, inconsistent package states, or unstable Termux installations, offering safe and reproducible update flows instead of blind `pkg upgrade` runs.
+ It is intended for users frustrated by failed upgrades, inconsistent package states, or unstable Termux installations, offering safe and reproducible update flows instead of blind `pkg upgrade` runs.
 
-# Designed for long-term use and automated workflows, it helps keep Termux environments stable, predictable, and maintainable.
+ Designed for long-term use and automated workflows, it helps keep Termux environments stable, predictable, and maintainable.
 
 <!-- NO-TRANSLATE-END -->
 
