@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="images/termux_updater_banner_github-1.png" width="650">
+  <img src="images/Termux-Updater_banner-seasonal-worldlight.png"
+       alt="Termux-Updater – Seasonal Worldlight Banner"
+       width="800">
 </p>
 
 <p align="center">
