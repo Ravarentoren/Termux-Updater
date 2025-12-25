@@ -17,7 +17,10 @@
   <a href="https://github.com/Ravarentoren/Termux-Updater/releases">
     <picture>
       <source srcset="images/badge-tu-download.svg" type="image/svg+xml">
-      <img src="images/badge-tu-download.png" alt="Download Termux-Updater">
+      <img
+        src="images/badge-tu-download.png"
+        alt="Download Termux-Updater"
+        width="140">
     </picture>
   </a>
 </p>
@@ -154,7 +157,10 @@ All reports are always stored in:
   <a href="https://github.com/Ravarentoren/Termux-Updater/releases">
     <picture>
       <source srcset="images/badge-tu-download.svg" type="image/svg+xml">
-      <img src="images/badge-tu-download.png" alt="Download Termux-Updater">
+      <img
+        src="images/badge-tu-download.png"
+        alt="Download Termux-Updater"
+        width="140">
     </picture>
   </a>
 </p>
