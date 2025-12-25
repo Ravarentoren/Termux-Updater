@@ -20,7 +20,7 @@
       <img
         src="images/badge-tu-download.png"
         alt="Download Termux-Updater"
-        width="140">
+        width="150">
     </picture>
   </a>
 </p>
@@ -160,7 +160,7 @@ All reports are always stored in:
       <img
         src="images/badge-tu-download.png"
         alt="Download Termux-Updater"
-        width="140">
+        width="150">
     </picture>
   </a>
 </p>
