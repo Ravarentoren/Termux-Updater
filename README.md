@@ -4,12 +4,24 @@
        width="800">
 </p>
 
+<!--
+<p align="center">
+  <img src="images/termux_updater_banner_github-1.png"
+       alt="Termux-Updater Main Banner"
+       width="650">
+</p>
+-->
+
+     <!-- DOWNLOAD BUTTONS -->
 <p align="center">
   <a href="https://github.com/Ravarentoren/Termux-Updater/releases">
-    <img src="images/Badge_Termux-Updater.svg" alt="Download Termux-Updater">
+    <img src="images/badge-tu-download.svg"
+         onerror="this.onerror=null;this.src='images/badge-tu-download.png';"
+         alt="Download Termux-Updater">
   </a>
 </p>
 
+  <!-- SYSTEM  BUTTONS -->
 <p align="center">
   <a href="https://github.com/Ravarentoren/Termux-Updater/stargazers">
     <img src="https://img.shields.io/github/stars/Ravarentoren/Termux-Updater?style=for-the-badge">
@@ -23,6 +35,7 @@
 </p>
 
 <p align="center">
+
   <!-- DONATION BUTTONS -->
   <a href="https://www.paypal.com/donate/?hosted_button_id=TZR7VNGUEDE7L">
     <img src="https://img.shields.io/badge/Donate-PayPal-0070ba?style=for-the-badge&logo=paypal">
@@ -135,7 +148,14 @@ All reports are always stored in:
 
 ## ⭐ Installation
 
-[![Download Termux-Updater](images/Badge_Termux-Updater.svg)](https://github.com/Ravarentoren/Termux-Updater/releases)
+  <!-- DOWNLOAD BUTTONS -->
+<p align="center">
+  <a href="https://github.com/Ravarentoren/Termux-Updater/releases">
+    <img src="images/badge-tu-download.svg"
+         onerror="this.onerror=null;this.src='images/badge-tu-download.png';"
+         alt="Download Termux-Updater">
+  </a>
+</p>
 
 ### 1. Clone the repository
 

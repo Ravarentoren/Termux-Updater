@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg
+	version="1.1"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	x="0%" y="0%"
+	width="100%" height="100%"
+	viewBox="0 0 160.0 28.0"
+	enable-background="new 0 0 160.0 28.0"
+	xml:space="preserve">
+<defs>
+	<linearGradient id="fillGrad0" x1="24.266%" y1="50.000%" x2="124.916%" y2="50.000%">
+   		<stop offset="0.000%" style="stop-color:rgb(47,47,47);stop-opacity:1.000" />
+		<stop offset="100.000%" style="stop-color:rgb(0,62,255);stop-opacity:1.000" />
+	</linearGradient>
+
+	<style type="text/css">
+		@font-face {
+			font-family: 'openSans'; 
+			src: url('./openSans.ttf');
+		}
+	</style>
+</defs>
+	<path
+		transform = "rotate(-0.00 80.00 14.00)"
+		fill="url(#fillGrad0)"
+		stroke="#000000"
+		fill-opacity="1.0"
+		stroke-opacity="1.000"
+		fill-rule="nonzero"
+		stroke-width="0.0"
+		stroke-linejoin="miter"
+		stroke-linecap="square"
+		d="M0.00,0.00L160.00,0.00L160.00,28.00L0.00,28.00z"/>
+
+	<text 
+		font-size="21.059896"
+		font-family="openSans"
+		stroke-width="0.28"
+		stroke="#4CAF50"
+		stroke-opacity="1.000"
+		fill-opacity="0"
+		text-anchor="start"
+  		transform="rotate(-0.0 550.13885 14.057949) scale(0.78952813 1.0)" >
+		<tspan x="47.82604" y="21.95595">TU - Download</tspan>
+	</text> 
+
+	<text 
+		font-size="21.059896"
+		font-family="openSans"
+		fill="#00CA08"
+		stroke-width="0"
+		fill-opacity="1.000"
+		text-anchor="start"
+  		transform="rotate(-0.0 550.13885 14.057949) scale(0.78952813 1.0)" >
+
+		<tspan x="47.82604" y="21.95595">TU - Download</tspan>
+	</text>
+	<path
+		fill="#000000"
+		stroke="#000000"
+		fill-opacity="1.000"
+		stroke-opacity="1.000"
+		fill-rule="nonzero"
+		stroke-width="0.28"
+		stroke-linejoin="miter"
+		stroke-linecap="square"
+		d="M11.92,6.70L24.53,6.70A1.04 1.04 0 0 1 25.57,7.74L25.57,20.64A1.04 1.04 0 0 1 24.53,21.67L11.92,21.67A1.04 1.04 0 0 1 10.88,20.64L10.88,7.74A1.04 1.04 0 0 1 11.92,6.70z"/>
+	<path
+		fill="#00AF07"
+		stroke="#00CA08"
+		fill-opacity="0.000"
+		stroke-opacity="1.000"
+		fill-rule="nonzero"
+		stroke-width="1.26"
+		stroke-linejoin="miter"
+		stroke-linecap="round"
+		d="M28.61,7.83A12.18 12.01 336.00 1 1 23.15,3.13"/>
+	<path
+		fill="#00AF07"
+		stroke="#00CA08"
+		fill-opacity="0.000"
+		stroke-opacity="1.000"
+		fill-rule="nonzero"
+		stroke-width="1.26"
+		stroke-linejoin="miter"
+		stroke-linecap="round"
+		d="M21.65,4.68L24.34,3.81L23.61,1.32"/>
+	<path
+		fill="#00AF07"
+		stroke="#FFFFFF"
+		fill-opacity="0.000"
+		stroke-opacity="1.000"
+		fill-rule="nonzero"
+		stroke-width="1.26"
+		stroke-linejoin="miter"
+		stroke-linecap="round"
+		d="M13.26,19.04L16.52,14.19L13.26,8.85"/>
+	<path
+		fill="#00AF07"
+		stroke="#FFFFFF"
+		fill-opacity="0.000"
+		stroke-opacity="1.000"
+		fill-rule="nonzero"
+		stroke-width="1.26"
+		stroke-linejoin="miter"
+		stroke-linecap="round"
+		d="M17.85,19.04L23.15,19.04"/>
+</svg>
