@@ -8,16 +8,17 @@
 <p align="center">
   <img src="images/termux_updater_banner_github-1.png"
        alt="Termux-Updater Main Banner"
-       width="650">
+       width="800">
 </p>
 -->
 
-     <!-- DOWNLOAD BUTTONS -->
+  <!-- DOWNLOAD BUTTON -->
 <p align="center">
   <a href="https://github.com/Ravarentoren/Termux-Updater/releases">
-    <img src="images/badge-tu-download.svg"
-         onerror="this.onerror=null;this.src='images/badge-tu-download.png';"
-         alt="Download Termux-Updater">
+    <picture>
+      <source srcset="images/badge-tu-download.svg" type="image/svg+xml">
+      <img src="images/badge-tu-download.png" alt="Download Termux-Updater">
+    </picture>
   </a>
 </p>
 
@@ -148,12 +149,13 @@ All reports are always stored in:
 
 ## ⭐ Installation
 
-  <!-- DOWNLOAD BUTTONS -->
+  <!-- DOWNLOAD BUTTON -->
 <p align="center">
   <a href="https://github.com/Ravarentoren/Termux-Updater/releases">
-    <img src="images/badge-tu-download.svg"
-         onerror="this.onerror=null;this.src='images/badge-tu-download.png';"
-         alt="Download Termux-Updater">
+    <picture>
+      <source srcset="images/badge-tu-download.svg" type="image/svg+xml">
+      <img src="images/badge-tu-download.png" alt="Download Termux-Updater">
+    </picture>
   </a>
 </p>
 
